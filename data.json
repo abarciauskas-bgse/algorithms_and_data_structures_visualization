@@ -1,309 +1,241 @@
 {
-  "name": "Root",
+  "name": "Data Structures",
   "children": [
     {
-      "name": "Front",
+      "name": "Algorithms",
       "children": [
         {
-          "name": "Website",
+          "name": "Iteration",
           "children": [
             {
-              "name": "Home",
-              "url": "www.my-media-website.com",
-              "dependsOn": ["Content API", "Search API", "Account API", "Picture API", "Facebook", "Twitter"],
-              "technos": ["PHP", "Silex", "Javascript", "NGINX", "Varnish"],
-              "host": { "Amazon": ["fo-1", "fo-2"] }
-            },
-            {
-              "name": "News",
-              "children": [
-                { "name": "World" },
-                { "name": "Sport" },
-                { "name": "Politics" },
-                { "name": "Science" },
-                { "name": "Business" },
-                { "name": "Technology" },
-                { "name": "Health" }
+              "name": "Eval Rev Polish Notation",
+              "url": "https://github.com/abarciauskas-bgse/code_kata/blob/master/data_structures/classics/test_eval_reverse_polish.py",
+              "dependsOn": [
+                "Stack"
               ],
-              "url": "www.my-media-website.com/*",
-              "dependsOn": ["Content API", "Xiti", "Search API", "Google Ads", "Account API", "Picture API", "Router API", "Facebook", "Twitter"],
-              "technos": ["PHP", "Silex", "NGINX", "Varnish"],
-              "host": { "Amazon": ["fo-1", "fo-2"] }
+              "technos": [],
+              "host": {}
             },
             {
-              "name": "Live",
-              "url": "live.my-media-website.com",
-              "dependsOn": ["Content API", "Picture API", "Router API", "Facebook", "Twitter"],
-              "technos": ["Javascript", "NodeJs", "NGINX", "Varnish"],
-              "host": { "Amazon": ["fo-live"] }
-            },
-            {
-              "name": "Blogs",
-              "url": "blogs.my-media-website.com/*",
-              "dependsOn": ["Wordpress MU"],
-              "technos": ["PHP", "Wordpress"],
-              "host": { "Amazon": ["?"] }
-            },
-            {
-              "name": "Videos",
+              "name": "Recursion",
+              "url": "",
+              "dependsOn": [],
+              "technos": [],
+              "host": {},
               "children": [
-                { "name": "World videos" },
-                { "name": "Sport videos" },
-                { "name": "Politics videos" },
-                { "name": "Science videos" },
-                { "name": "Business videos" },
-                { "name": "Technology videos" },
-                { "name": "Health videos" }
-              ],
-              "url": "videos.my-media-website.com",
-              "dependsOn": ["Video Player", "Videos API", "Router API", "Search API"],
-              "technos": ["PHP", "Symfony", "Javascript"],
-              "host": { "Amazon": ["fo-video"] }
-            },
-            {
-              "name": "Jobs",
-              "url": "jobs.my-media-website.com",
-              "dependsOn": ["BO JobBoard"],
-              "technos": ["PHP", "JobBoard"],
-              "host": { "Amazon": ["?"] }
-            },
-            {
-              "name": "Store",
-              "url": "store.my-media-website.com",
-              "dependsOn": ["BO Store"],
-              "technos": ["PHP", "Zend", "Magento"],
-              "host": { "Amazon": ["?"] }
-            },
-            {
-              "name": "Help",
-              "children": [
-                { "name": "Contact" },
-                { "name": "Privacy" },
-                { "name": "Mobile apps" },
-                { "name": "Using website" },
-                { "name": "What's New" }
-              ],
-              "url": "help.my-media-website.com",
-              "host": { "Amazon": ["fo-1", "fo-2"] }
-            }
-          ],
-          "dependsOn": ["Xiti", "Google Ads", "Account API"]
-        },
-        {
-          "name": "Reader",
-          "children": [
-            { "name": "RSS" },
-            { "name": "Alerts" },
-            { "name": "Favorites" }
-          ],
-          "dependsOn": ["Content API", "Search API", "Account API"]
-        },
-        {
-          "name": "Mobile",
-          "children": [
-            {
-              "name": "iOS app",
-              "children": [
-                { "name": "News iOS Mobile" },
-                { "name": "Live iOS Mobile" },
-                { "name": "Videos iOS Mobile" }
-              ],
-              "technos": ["Natif", "Objective-C"]
-            },
-            {
-              "name": "Android app",
-              "children": [
-                { "name": "News Android Mobile" },
-                { "name": "Live Android Mobile" },
-                { "name": "Videos Android Mobile" }
-              ],
-              "technos": ["Natif", "Android"]
-            },
-            {
-              "name": "Windows app",
-              "children": [
-                { "name": "News Windows Mobile" },
-                { "name": "Live Windows Mobile" },
-                { "name": "Videos Windows Mobile" }
-              ],
-              "technos": ["Natif", "Javascript"]
-            }
-          ],
-          "dependsOn": ["Content API"]
-        }
-      ]
-    },
-    {
-      "name": "SaaS",
-      "children": [
-        { "name": "Xiti" },
-        { "name": "Google Ads" },
-        { "name": "Video Player" },
-        { "name": "S3 Storage" },
-        { "name": "Simple Queue Service" },
-        {
-          "name": "Facebook",
-          "children": [
-            { "name": "Comments" },
-            { "name": "Like Button" }
-          ]
-        },
-        { "name": "Twitter" }
-      ]
-    },
-    {
-      "name": "API",
-      "children": [
-        { 
-          "name": "Content API",
-          "url": "api.my-media-website.com/content",
-          "dependsOn": ["CMS"],
-          "technos": ["PHP", "Silex", "Postgresql"],
-          "host": { "Amazon": ["api-1", "api-2"] }
-        },
-        { 
-          "name": "Picture API",
-          "children": [
-            { "name": "Picture API Content" },
-            { "name": "Picture API Home" }
-          ],
-          "dependsOn": ["Storage API"],
-          "url": "api.my-media-website.com/picture",
-          "technos": ["PHP", "Silex", "Postgresql"],
-          "host": { "Amazon": ["api-1", "api-2"] }
-        },
-        { 
-          "name": "Router API",
-          "url": "api.my-media-website.com/router",
-          "dependsOn": ["CMS"],
-          "technos": ["PHP", "Silex", "Postgresql"],
-          "host": { "Amazon": ["api-1", "api-2"] }
-        },
-        { 
-          "name": "Search API",
-          "url": "api.my-media-website.com/search",
-          "satisfaction": 0.2,
-          "technos": ["PHP", "Silex", "Postgresql"],
-          "host": { "Amazon": ["api-1", "api-2"] }
-        },
-        { 
-          "name": "Account API",
-          "url": "api.my-media-website.com/account",
-          "dependsOn": ["BO Account", "CRM"],
-          "technos": ["PHP", "Silex", "Postgresql"],
-          "host": { "Amazon": ["api-1", "api-2"] }
-        },
-        {
-          "name": "SEO API",
-          "url": "api.my-media-website.com/seo",
-          "dependsOn": ["BO SEO"],
-          "technos": ["PHP", "Silex", "Postgresql"],
-          "host": { "Amazon": ["api-1", "api-2"] }
-        },
-        { 
-          "name": "Export API",
-          "children": [
-            { "name": "Partner export" },
-            { "name": "RSS export" },
-            {
-              "name": "Sitemap",
-              "children": [
-                { "name": "Sitemap News" },
-                { "name": "Sitemap Videos" },
-                { "name": "Sitemap Live" }
+                {
+                  "name": "Divide and Conquer",
+                  "children": [
+                    {
+                      "name": "merge sort",
+                      "comments": "O(n log n)",
+                      "url": "https://github.com/abarciauskas-bgse/code_kata/blob/master/algorithms_design_and_analysis/merge_sort.py"
+                    }
+                  ]
+                },
+                {
+                  "name": "Tower of Hanoi",
+                  "url": "https://github.com/abarciauskas-bgse/code_kata/blob/master/interactive_python/towerOfHanoi.py"
+                },
+                {
+                  "name": "recursive addition",
+                  "url": "https://github.com/abarciauskas-bgse/code_kata/blob/master/interactive_python/recursiveAddition.py"
+                },
+                {
+                  "name": "Master Method",
+                  "comments": "T(n) <= a T(n/b) + O(n**d)\nn - size of problem,\na - # of subproblems in recursion (e.g. 2 for merge sort)\nn/b - size of subproblem (e.g. 2 for merge sort)\nd - work down outside recursive call\n\nAssumption: size of subproblem is always the same",
+                  "children": [
+                    {
+                      "name": "Case 1: a = b**d",
+                      "comments": "O(n**d log n)"
+                    },
+                    {
+                      "name": "Case 2: a < b**d",
+                      "comments": "O(n**d)"
+                    },
+                    {
+                      "name": "Case 3: a > b**d",
+                      "comments": "O(n ** (log_b a))"
+                    }
+                  ]
+                }
               ]
             }
           ],
-          "url": "api.my-media-website.com/export",
-          "dependsOn": ["CMS"],
-          "satisfaction": 0.8,
-          "technos": ["PHP", "Silex", "Postgresql"],
-          "host": { "Amazon": ["api-1", "api-2"] }
+          "dependsOn": []
+        },
+        {
+          "name": "System Design",
+          "children": [
+            {
+              "name": "Alerts"
+            },
+            {
+              "name": "Favorites"
+            }
+          ],
+          "dependsOn": []
+        },
+        {
+          "name": "Bit Manipulation"
         }
-      ],
-      "dependsOn": ["S3 Storage", "Simple Queue Service"]
+      ]
     },
     {
-      "name": "Back",
+      "name": "Graphs",
       "children": [
-        { 
-          "name": "CMS",
+        {
+          "name": "Trees",
           "children": [
-            { "name": "BO World" },
-            { "name": "BO Sport" },
-            { "name": "BO Politics" },
-            { "name": "BO Science" },
-            { "name": "BO Business" },
-            { "name": "BO Technology" },
-            { "name": "BO Health" },
-            { "name": "BO Front page editor" },
-            { "name": "BO Section manager" }
+            {
+              "name": "Binary Tree",
+              "children": [
+                {
+                  "name": "Motivations",
+                  "comments": "Fast search, fast insert and delete (combined pros of ordered array and linked list)"
+                },
+                {
+                  "name": "Uses"
+                },
+                {
+                  "name": "insert (bt)",
+                  "comments": "Balanced -> O(log n)\nUnbalanced -> O(n) (average O(log n))"
+                },
+                {
+                  "name": "search (bt)",
+                  "comments": "O(log n)"
+                },
+                {
+                  "name": "traversals",
+                  "children": [
+                    {
+                      "name": "preorder"
+                    },
+                    {
+                      "name": "inorder"
+                    },
+                    {
+                      "name": "postorder"
+                    }
+                  ]
+                }
+              ],
+              "comments": "",
+              "url": "https://github.com/abarciauskas-bgse/code_kata/blob/master/data_structures/binary_tree.py"
+            },
+            {
+              "name": "RedBlack Tree"
+            },
+            {
+              "name": "Heap"
+            }
           ],
-          "url": "cms.my-media-website.com",
-          "technos": ["Javascript", "NodeJS", "Sails"],
-          "host": { "OVH": ["bo-1", "bo-2"] }
-        },
-        {
-          "name": "CRM",
-          "url": "?",
-          "technos": ["PHP", "SugarCRM"],
-          "satisfaction": 0.5,
-          "host": { "OVH": ["crm-1", "crm-2"] }
-        },
-        {
-          "name": "Wordpress MU",
-          "url": "?",
-          "technos": ["PHP", "Wordpress"],
-          "host": { "OVH": ["bo-1", "bo-2"] }
-        },
-        {
-          "name": "BO Videos",
-          "url": "?",
-          "technos": ["PHP", "Symfony"],
-          "host": { "OVH": ["bo-1", "bo-2"] }
-        },
-        {
-          "name": "BO Account",
-          "url": "?",
-          "technos": ["PHP", "Symfony"],
-          "host": { "OVH": ["bo-1", "bo-2"] }
-        },
-        {
-          "name": "BO SEO",
-          "children": [
-            { "name": "BO Meta home" },
-            { "name": "BO Meta content" },
-            { "name": "BO Meta links" }
-          ],
-          "url": "?",
-          "technos": ["PHP", "Symfony"],
-          "host": { "OVH": ["bo-1", "bo-2"] }
-        },
-        {
-          "name": "Import",
-          "children": [
-            { "name": "FTP Import" },
-            { "name": "RSS Import" },
-            { "name": "Custom Import" }
-          ],
-          "url": "?",
-          "technos": ["PHP", "Symfony"],
-          "host": { "OVH": ["bo-1", "bo-2"] }
-        },
-        {
-          "name": "BO JobBoard",
-          "url": "?",
-          "technos": ["PHP", "JobBoard"],
-          "host": { "OVH": ["job-1", "job-2"] }
-        },
-        {
-          "name": "BO Store",
-          "url": "?",
-          "technos": ["PHP", "Zend", "Magento"],
-          "host": { "OVH": ["store"] }
+          "url": "",
+          "dependsOn": [],
+          "technos": [],
+          "host": {}
         }
       ],
-      "dependsOn": ["S3 Storage", "Simple Queue Service"]
+      "dependsOn": []
+    },
+    {
+      "name": "Linear Structures",
+      "children": [
+        {
+          "name": "Array",
+          "children": [
+            {
+              "name": "insert",
+              "comments": "O(n) for python"
+            },
+            {
+              "name": "delete",
+              "comments": "O(n)"
+            },
+            {
+              "name": "search",
+              "comments": "O(n)"
+            }
+          ],
+          "url": "",
+          "technos": [],
+          "host": {},
+          "dependents": [
+            "SEO API",
+            "SEO API",
+            "SEO API"
+          ]
+        },
+        {
+          "name": "Stack",
+          "children": [
+            {
+              "name": "push",
+              "comments": "O(1)"
+            },
+            {
+              "name": "pop",
+              "comments": "O(1)"
+            }
+          ],
+          "url": "",
+          "technos": [],
+          "host": {}
+        },
+        {
+          "name": "Queue",
+          "url": "",
+          "technos": [],
+          "host": {},
+          "dependents": [
+            "Jobs"
+          ],
+          "children": [
+            {
+              "name": "enqueue",
+              "comments": "O(1)"
+            },
+            {
+              "name": "dequeue",
+              "comments": "O(1)"
+            }
+          ]
+        },
+        {
+          "name": "Lists",
+          "children": [
+            {
+              "name": "Linked List"
+            }
+          ]
+        }
+      ],
+      "dependsOn": []
+    },
+    {
+      "name": "Hash Tables",
+      "children": [
+        {
+          "name": "insert (ht)",
+          "comments": "O(1)"
+        },
+        {
+          "name": "search (ht)",
+          "comments": "O(1)"
+        },
+        {
+          "name": "delete (ht)",
+          "dependsOn": [],
+          "comments": "O(1)"
+        },
+        {
+          "name": "Disadvantages (ht)",
+          "comments": "Based on arrays and thus hard to expand\n\n\"performance may degrade catastrophically when the table becomes too full\" - DSAA"
+        },
+        {
+          "name": "Motivations (ht)"
+        }
+      ]
     }
   ]
 }
